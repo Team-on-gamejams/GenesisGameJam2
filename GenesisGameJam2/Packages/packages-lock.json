@@ -1,0 +1,529 @@
+{
+  "dependencies": {
+    "com.arimger.editor-toolbox": {
+      "version": "https://github.com/arimger/Unity-Editor-Toolbox.git#upm",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.editorcoroutines": "1.0.0"
+      },
+      "hash": "14721d8ffbf199f3ec91a6c4f9cac0ea55489a42"
+    },
+    "com.baba-s.uni-scene-asset-selector": {
+      "version": "https://github.com/baba-s/UniSceneAssetSelector.git#master",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "b1b47c769c6cb3e0abff24d6185be8fdaa0608ee"
+    },
+    "com.baste.playerloopinterface": {
+      "version": "https://github.com/Baste-RainGames/PlayerLoopInterface.git#master",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "9857ebf2cea90dd40480be8d7d3c9a1ab4f88655"
+    },
+    "com.blackfeatherproductions.slngen": {
+      "version": "https://github.com/jhett12321/Unity-Slngen.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "f1887f35e5d9949db2541253376033480985b93e"
+    },
+    "com.coffee.ui-effect": {
+      "version": "https://github.com/mob-sakai/UIEffect.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "b43e40508b167d143330d8b9eff0d5c9965cdf3c"
+    },
+    "com.coffee.ui-effect-snapshot": {
+      "version": "https://github.com/mob-sakai/UIEffectSnapshot.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "85e955431db5fdde1bf44b3c1618991594b41722"
+    },
+    "com.coffee.ui-particle": {
+      "version": "https://github.com/mob-sakai/ParticleEffectForUGUI.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "2e4d80bc1cbbfe5400fb052778c65bcccc505abd"
+    },
+    "com.dbrizov.naughtyattributes": {
+      "version": "https://github.com/dbrizov/NaughtyAttributes.git#upm",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "6ff42768879f6d3721f27c1fc1ba0c1d145a3f27"
+    },
+    "com.gemserk.selectionhistory": {
+      "version": "https://github.com/acoppes/unity-history-window.git#1.0.4",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "af37e700fcea76fa0bd5cf816e2493bdd04a9515"
+    },
+    "com.needle.compilation-visualizer": {
+      "version": "https://github.com/needle-tools/compilation-visualizer.git#master",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "6ad1015c4489ed2b4eadda4f649386bf461877d6"
+    },
+    "com.ogxd.project-curator": {
+      "version": "https://github.com/ogxd/project-curator.git#master",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "454dadcf0d3ce5b2719aa83456bdd3d1c90230a5"
+    },
+    "com.quantumcalzone.unitygitpackageupdater": {
+      "version": "https://github.com/QuantumCalzone/UnityGitPackageUpdater.git#upm",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "82a9836fdc5056d5d3b3de0d8471e56d55f6f292"
+    },
+    "com.rfadeev.pumpeditor": {
+      "version": "https://github.com/rfadeev/pump-editor.git#master",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.modules.jsonserialize": "1.0.0"
+      },
+      "hash": "c5ba87ad9fa09df09b02aa992124ebc44ded5365"
+    },
+    "com.rfadeev.pumpeditor.presetsbrowser": {
+      "version": "https://github.com/rfadeev/presets-browser.git#master",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "ff29107cc301a5c1c7646cf16f199f2cc4f8375b"
+    },
+    "com.rfadeev.unityforge.animcallbacks": {
+      "version": "https://github.com/rfadeev/unity-forge-anim-callbacks.git#upm",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "54ac3515ab2558edb50768c86e428ce188c6a199"
+    },
+    "com.rfadeev.unityforge.propertydrawers": {
+      "version": "https://github.com/rfadeev/unity-forge-property-drawers.git#master",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "1f0da3d5026fbe478585adb0cccc75f5e2dcf7fe"
+    },
+    "com.sabresaurus.playerprefseditor": {
+      "version": "https://github.com/sabresaurus/PlayerPrefsEditor.git#master",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "fe5dc0925ca55c930fb748adaeb44744ff6d2818"
+    },
+    "com.smkplus.custom-toolbar": {
+      "version": "https://github.com/smkplus/CustomToolbar.git#master",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "3d4496ad5017d8b910c4e169a5b2906d2b03602d"
+    },
+    "com.tayx.graphy": {
+      "version": "https://github.com/Tayx94/graphy.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "008ca2e1b64201e26ee41800d54bcec61991fc75"
+    },
+    "com.teamon.buildmanager": {
+      "version": "https://github.com/Team-on/UnityBuildManager.git#main",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "5ccccffd24b63fdfe65d45a02362e5798e941ee1"
+    },
+    "com.teamon.projectwindowdetails": {
+      "version": "https://github.com/Team-on/ProjectWindowDetails.git#master",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "16d8b5d58ff47e032b8f48fba1a142b5f8dee009"
+    },
+    "com.teamon.rainbowfolders": {
+      "version": "https://github.com/Team-on/unity3d-rainbow-folders.git#master",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "3e1f3ad2b31161de6e311a96cb03a1445d329511"
+    },
+    "com.teamon.screenshooter": {
+      "version": "https://github.com/Team-on/UnityScreenShooter.git#main",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "396f0c8e8335150e86c0e088a6683a6caaeeaa7c"
+    },
+    "com.unity.2d.sprite": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.2d.tilemap": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.build-report-inspector": {
+      "version": "0.2.2-preview",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.cinemachine": {
+      "version": "2.7.9",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.editorcoroutines": {
+      "version": "1.0.0",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.ext.nunit": {
+      "version": "1.0.6",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.ide.visualstudio": {
+      "version": "2.0.12",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.test-framework": "1.1.9"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.inputsystem": {
+      "version": "1.2.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.modules.uielements": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.memoryprofiler": {
+      "version": "0.4.2-preview.1",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.editorcoroutines": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.performance.profile-analyzer": {
+      "version": "1.1.1",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.postprocessing": {
+      "version": "3.1.1",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.modules.physics": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.recorder": {
+      "version": "2.5.7",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.timeline": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.sysroot": {
+      "version": "0.1.19-preview",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.sysroot.linux-x86_64": {
+      "version": "0.1.15-preview",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.sysroot": "0.1.19-preview"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.test-framework": {
+      "version": "1.1.29",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.ext.nunit": "1.0.6",
+        "com.unity.modules.imgui": "1.0.0",
+        "com.unity.modules.jsonserialize": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.textmeshpro": {
+      "version": "3.0.6",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.ugui": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.timeline": {
+      "version": "1.4.8",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.modules.director": "1.0.0",
+        "com.unity.modules.animation": "1.0.0",
+        "com.unity.modules.audio": "1.0.0",
+        "com.unity.modules.particlesystem": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.toolchain.win-x86_64-linux-x86_64": {
+      "version": "0.1.21-preview",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.sysroot": "0.1.19-preview",
+        "com.unity.sysroot.linux-x86_64": "0.1.14-preview"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.ugui": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.modules.ui": "1.0.0",
+        "com.unity.modules.imgui": "1.0.0"
+      }
+    },
+    "com.unity.uiextensions": {
+      "version": "https://github.com/JohannesDeml/unity-ui-extensions.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "001c2b93e9751700f50a01be3eb1cc6b5f25be99"
+    },
+    "com.yasirkula.ingamedebugconsole": {
+      "version": "https://github.com/yasirkula/UnityIngameDebugConsole.git#master",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "72558ca123e8589456888fd74eefb0bba3729a82"
+    },
+    "st.one-line": {
+      "version": "https://github.com/slavniyteo/one-line.git#master",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "st.rect-ex": "0.2.1"
+      },
+      "hash": "0c049d166c59683d136276c63e7f8691f3b6a50c"
+    },
+    "st.rect-ex": {
+      "version": "https://github.com/slavniyteo/rect-ex.git#master",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "c8c32b33ce250aa927de7f6c79ae7c0b6eab36cb"
+    },
+    "com.unity.modules.androidjni": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.modules.animation": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.modules.assetbundle": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.modules.audio": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.modules.director": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.modules.audio": "1.0.0",
+        "com.unity.modules.animation": "1.0.0"
+      }
+    },
+    "com.unity.modules.imageconversion": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.modules.imgui": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.modules.jsonserialize": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.modules.particlesystem": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.modules.physics": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.modules.physics2d": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.modules.screencapture": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.modules.imageconversion": "1.0.0"
+      }
+    },
+    "com.unity.modules.subsystems": {
+      "version": "1.0.0",
+      "depth": 2,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.modules.jsonserialize": "1.0.0"
+      }
+    },
+    "com.unity.modules.tilemap": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.modules.physics2d": "1.0.0"
+      }
+    },
+    "com.unity.modules.ui": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.modules.uielements": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.modules.ui": "1.0.0",
+        "com.unity.modules.imgui": "1.0.0",
+        "com.unity.modules.jsonserialize": "1.0.0",
+        "com.unity.modules.uielementsnative": "1.0.0"
+      }
+    },
+    "com.unity.modules.uielementsnative": {
+      "version": "1.0.0",
+      "depth": 1,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.modules.ui": "1.0.0",
+        "com.unity.modules.imgui": "1.0.0",
+        "com.unity.modules.jsonserialize": "1.0.0"
+      }
+    },
+    "com.unity.modules.umbra": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.modules.unityanalytics": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.modules.unitywebrequest": "1.0.0",
+        "com.unity.modules.jsonserialize": "1.0.0"
+      }
+    },
+    "com.unity.modules.unitywebrequest": {
+      "version": "1.0.0",
+      "depth": 1,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.modules.video": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.modules.audio": "1.0.0",
+        "com.unity.modules.ui": "1.0.0",
+        "com.unity.modules.unitywebrequest": "1.0.0"
+      }
+    },
+    "com.unity.modules.vr": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.modules.jsonserialize": "1.0.0",
+        "com.unity.modules.physics": "1.0.0",
+        "com.unity.modules.xr": "1.0.0"
+      }
+    },
+    "com.unity.modules.xr": {
+      "version": "1.0.0",
+      "depth": 1,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.modules.physics": "1.0.0",
+        "com.unity.modules.jsonserialize": "1.0.0",
+        "com.unity.modules.subsystems": "1.0.0"
+      }
+    }
+  }
+}

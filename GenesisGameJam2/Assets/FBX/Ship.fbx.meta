@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2be664224ad8a144e8fbc88a09a46e9e
+guid: 6c6d5d54beaa3bf4f9866fdc6b9c5248
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
@@ -8,22 +8,17 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: 1
-    second: {fileID: 2100000, guid: 324265c59b155af439ab10b7abe4ba7f, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: HumanBody1_blinn1
-    second: {fileID: 2100000, guid: fd884d33b17a63c4a83cf8ef3d6c4054, type: 2}
+    second: {fileID: 2100000, guid: 27b086bdea2ffd24eb69908d3674e748, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: emissive
-    second: {fileID: 2100000, guid: 73f8e9dd39fb770489d4c41992f6e4f2, type: 2}
+    second: {fileID: 2100000, guid: f62f58f5012e028439efee7fd3d51701, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: lambert1
-    second: {fileID: 2100000, guid: 570b608223920614b88cc8350f245f85, type: 2}
+    second: {fileID: 2100000, guid: a82553b898930bd4e9fa6f3ec86d15ef, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -54,9 +49,9 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.75
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
     importVisibility: 1
@@ -105,7 +100,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 0.75
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

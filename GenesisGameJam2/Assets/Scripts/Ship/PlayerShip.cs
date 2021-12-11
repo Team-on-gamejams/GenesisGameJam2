@@ -16,14 +16,13 @@ public class PlayerShip : MonoBehaviour {
 	[Header("UI"), Space]
 	[SerializeField] TextMeshProUGUI speedTextField;
 	[SerializeField] TextMeshProUGUI timeTextField;
+	[SerializeField] TextMeshProUGUI tempTextField;
 	[SerializeField] TextMeshProUGUI debugTextField;
 
 	[Header("Refs"), Space]
 	[SerializeField] Rigidbody rb;
 	[SerializeField] JoystickGrabController moveJoy;
 	[SerializeField] JoystickGrabController rotateJoy;
-	[SerializeField] JoystickGrabController control;
-	[SerializeField] JoystickGrabController thrust;
 
 #if UNITY_EDITOR
 	private void OnValidate() {
@@ -35,6 +34,7 @@ public class PlayerShip : MonoBehaviour {
 	private void Update() {
 		speedTextField.text = "Speed: " + rb.velocity.magnitude.ToString("0") + "m/s";
 		timeTextField.text = DateTime.Now.ToShortTimeString();
+		tempTextField.text = "42°C";
 	}
 
 	private void FixedUpdate() {
@@ -44,10 +44,6 @@ public class PlayerShip : MonoBehaviour {
 			rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref tmp, 0.1f);
 
 		rb.angularVelocity = transform.TransformDirection(new Vector3(rotateJoy.Value.x * rotateSpeed, rotateJoy.Value.y * rotateSpeed, 0));
-
-		if (control.IsGrabbed) {
-			rb.AddForce(transform.forward * speedAcc * Time.deltaTime, ForceMode.Acceleration);
-		}
 
 		if(moveJoy.grabbable.grabbedBy)
 			debugTextField.text = $"{moveJoy.Value}\n{moveJoy.transform.localEulerAngles}\n{moveJoy.grabbable.grabbedBy.transform.parent.parent.localEulerAngles}";

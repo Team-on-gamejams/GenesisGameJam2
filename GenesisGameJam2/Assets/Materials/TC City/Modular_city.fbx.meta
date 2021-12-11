@@ -1,34 +1,9 @@
 fileFormatVersion: 2
-guid: 678794470202cdf4b8f11696f0881e4e
+guid: 59a87b48f0ab9314e88e6b7f8017aece
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: TCcityBuiltVOXEL_TCBaseBottom1
-    second: {fileID: 2100000, guid: 0858aacc78f007846906eea48cd5c66b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: TCcityBuiltVOXEL_TCBaseTop1
-    second: {fileID: 2100000, guid: efdd48f6865fb9743ab3101ee1e5a1c4, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: TCcityBuiltVOXEL_TCBuilding02
-    second: {fileID: 2100000, guid: a9645dd95d6517846a57d39d587f8c71, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: TCcityBuiltVOXEL_TCBuilding04
-    second: {fileID: 2100000, guid: 0e624aa0342a631429defc0bd8c36033, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: TCcityBuiltVOXEL_TCBuilding06
-    second: {fileID: 2100000, guid: 975d0bbc18a7ee54783a0e4109cd9729, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

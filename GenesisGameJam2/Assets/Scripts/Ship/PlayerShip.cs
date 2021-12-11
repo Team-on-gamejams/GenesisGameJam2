@@ -5,9 +5,6 @@ using UnityEngine;
 using TMPro;
 
 public class PlayerShip : MonoBehaviour {
-	[Header("Balance"), Space]
-	[SerializeField] float speedAcc = 500;
-
 	[Header("Moving")]
 	[Space]
 	[SerializeField] float moveSpeed = 4.0f;
@@ -17,11 +14,12 @@ public class PlayerShip : MonoBehaviour {
 	[SerializeField] TextMeshProUGUI speedTextField;
 	[SerializeField] TextMeshProUGUI timeTextField;
 	[SerializeField] TextMeshProUGUI tempTextField;
+	[SerializeField] TextMeshProUGUI sectorTextField;
 	[SerializeField] TextMeshProUGUI debugTextField;
 
 	[Header("Refs"), Space]
 	[SerializeField] Rigidbody rb;
-	[SerializeField] JoystickGrabController moveJoy;
+	[SerializeField] JoystickLinearMove moveJoy;
 	[SerializeField] JoystickGrabController rotateJoy;
 
 #if UNITY_EDITOR
@@ -31,15 +29,19 @@ public class PlayerShip : MonoBehaviour {
 	}
 #endif
 
+	private void Start() {
+		tempTextField.text = "42F";
+		sectorTextField.text = "Sector:\nMATRIX 177013";
+	}
+
 	private void Update() {
 		speedTextField.text = "Speed: " + rb.velocity.magnitude.ToString("0") + "m/s";
 		timeTextField.text = DateTime.Now.ToShortTimeString();
-		tempTextField.text = "42°C";
 	}
 
 	private void FixedUpdate() {
 		Vector3 tmp = Vector3.zero;
-		Vector3 targetVelocity = transform.TransformDirection(new Vector3(moveJoy.Value.y * moveSpeed, 0, moveJoy.Value.x * moveSpeed));
+		Vector3 targetVelocity = transform.TransformDirection(new Vector3(0, 0, moveJoy.Value * moveSpeed));
 		if (targetVelocity != Vector3.zero)
 			rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref tmp, 0.1f);
 

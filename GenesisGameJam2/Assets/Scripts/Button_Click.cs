@@ -19,11 +19,6 @@ public class Button_Click : MonoBehaviour {
 
 	}
 
-	private void OnTriggerEnter(Collider other) {
-		if (!_isPressed)
-			Pressed();
-	}
-
 	// Update is called once per frame
 	void Update() {
 		if (!_isPressed && GetValue() + threshold >= 1)

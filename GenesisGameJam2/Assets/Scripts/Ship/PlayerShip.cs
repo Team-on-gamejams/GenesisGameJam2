@@ -113,11 +113,9 @@ public class PlayerShip : MonoBehaviour {
 			rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref tmp, 0.1f);
 
 		rb.angularVelocity = transform.TransformDirection(new Vector3(rotateJoy.Value.x * rotateSpeed, rotateJoy.Value.y * rotateSpeed, 0));
-
-		debugTextField.text = $"{GetComponentInChildren<AimToEnemy>().targets.Count}";
 	}
 
-	void SwitchWeapon() {
+	public void SwitchWeapon() {
 		if (weaponLight.IsEquiped && weaponHeavy.IsEquiped)
 			return;
 

@@ -21,6 +21,12 @@ public class Weapon : MonoBehaviour
 	[SerializeField] bool isHaveOverheat = false;
 	[SerializeField] float overheatMaxTime = 10;
 
+	[Header("Animate"), Space]
+	[SerializeField] bool isAnimateRotation = false;
+	[SerializeField] bool isAnimateBack = false;
+	[SerializeField] Transform gameObjectToAnimate;
+
+
 	[Header("UI"), Space]
 	[SerializeField] Slider slider;
 
@@ -69,6 +75,10 @@ public class Weapon : MonoBehaviour
 			}
 		}
 
+		if (isHaveOverheat && overheatTimer >= overheatMaxTime) {
+			isCanShoot = false;
+		}
+
 		UpdateSlider();
 
 		if (isCanShoot) {
@@ -108,7 +118,26 @@ public class Weapon : MonoBehaviour
 
 		GameObject beam = Instantiate(beamPrefab, shootPos.transform.position, shootPos.transform.rotation);
 
-		Destroy(beam, 2.0f + UnityEngine.Random.Range(0, 2));
+		Destroy(beam, 0.05f);
+
+		if (isAnimateBack) {
+			LeanTween.value(gameObject, gameObjectToAnimate.localPosition.z, gameObjectToAnimate.localPosition.z + 0.6f, cooldownTime * 0.45f)
+				.setOnUpdate((float angle) => {
+					gameObjectToAnimate.localPosition = gameObjectToAnimate.localPosition.SetZ(angle);
+				})
+				.setOnComplete(()=> {
+					LeanTween.value(gameObject, gameObjectToAnimate.localPosition.z, gameObjectToAnimate.localPosition.z - 0.6f, cooldownTime * 0.45f)
+					.setOnUpdate((float angle) => {
+						gameObjectToAnimate.localPosition = gameObjectToAnimate.localPosition.SetZ(angle);
+					});
+				});
+		}
+		else if (isAnimateRotation) {
+			LeanTween.value(gameObject, gameObjectToAnimate.eulerAngles.z, gameObjectToAnimate.eulerAngles.z + 120, cooldownTime * 0.99f)
+				.setOnUpdate((float angle) => {
+					gameObjectToAnimate.eulerAngles = gameObjectToAnimate.eulerAngles.SetZ(angle);
+				});
+		}
 	}
 
 	void UpdateSlider() {

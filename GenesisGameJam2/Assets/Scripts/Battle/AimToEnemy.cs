@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class AimToEnemy : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	[Header("Refs"), Space]
+	[SerializeField] Transform aim;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }

@@ -61,15 +61,16 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _Glossiness: 0.5
-    - _LightSaberFactor: 0.9
+    - _LightSaberFactor: 0.5
     - _LineScale: 1
-    - _LineWidth: 70
+    - _LineWidth: 1
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _SrcBlend: 1
     - _UVSec: 0
+    - _UvBasedLightSaberFactor: 0
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 0, b: 0, a: 0}

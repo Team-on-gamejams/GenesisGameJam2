@@ -96,7 +96,6 @@ public class PlayerShip : MonoBehaviour {
 			UseDoubleWeaponAbility();
 		}
 
-		Debug.Log($"{OVRInput.Get(OVRInput.RawAxis1D.RIndexTrigger)} {isHoldShooting}");
 		if (OVRInput.Get(OVRInput.RawAxis1D.RIndexTrigger) >= 0.7f && rotateJoy.IsGrabbed && !isHoldShooting) {
 			Debug.Log("Down");
 			PressShoot();

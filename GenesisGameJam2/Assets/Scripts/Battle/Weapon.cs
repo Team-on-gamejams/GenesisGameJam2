@@ -4,14 +4,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Weapon : MonoBehaviour
-{
+public class Weapon : MonoBehaviour {
 	[NonSerialized] public bool IsEquiped;
 	[NonSerialized] public bool IsShooting;
 
 	[Header("Balance"), Space]
+	[SerializeField] bool IsPlayer = false;
 	[SerializeField] GameObject beamPrefab;
-	[SerializeField] float damage = 50;
+	[SerializeField] int damage = 50;
+	[SerializeField] float attackDist = 10;
 
 	[Header("KD"), Space]
 	[SerializeField] bool isHaveCooldown = true;
@@ -37,8 +38,10 @@ public class Weapon : MonoBehaviour
 	float overheatTimer;
 
 	private void Awake() {
-		slider.minValue = 0;
-		slider.maxValue = 1;
+		if(slider)
+			slider.minValue = 0;
+		if(slider)
+			slider.maxValue = 1;
 	}
 
 	private void Update() {
@@ -64,7 +67,7 @@ public class Weapon : MonoBehaviour
 				isCanShoot = true;
 			}
 		}
-		
+
 		if (isHaveCooldown) {
 			cooldownTimer -= Time.deltaTime;
 			if (cooldownTimer <= 0) {
@@ -117,16 +120,17 @@ public class Weapon : MonoBehaviour
 		cooldownTimer = cooldownTime;
 
 		GameObject beam = Instantiate(beamPrefab, shootPos.transform.position, shootPos.transform.rotation);
-
 		Destroy(beam, 0.05f);
 
 		if (isAnimateBack) {
 			LeanTween.value(gameObject, gameObjectToAnimate.localPosition.z, gameObjectToAnimate.localPosition.z + 0.6f, cooldownTime * 0.45f)
+				.setEase(LeanTweenType.easeOutExpo)
 				.setOnUpdate((float angle) => {
 					gameObjectToAnimate.localPosition = gameObjectToAnimate.localPosition.SetZ(angle);
 				})
-				.setOnComplete(()=> {
+				.setOnComplete(() => {
 					LeanTween.value(gameObject, gameObjectToAnimate.localPosition.z, gameObjectToAnimate.localPosition.z - 0.6f, cooldownTime * 0.45f)
+					.setEase(LeanTweenType.easeOutQuad)
 					.setOnUpdate((float angle) => {
 						gameObjectToAnimate.localPosition = gameObjectToAnimate.localPosition.SetZ(angle);
 					});
@@ -137,6 +141,14 @@ public class Weapon : MonoBehaviour
 				.setOnUpdate((float angle) => {
 					gameObjectToAnimate.eulerAngles = gameObjectToAnimate.eulerAngles.SetZ(angle);
 				});
+		}
+
+		Vector3 fwd = shootPos.transform.TransformDirection(Vector3.forward);
+		if (Physics.Raycast(shootPos.transform.position, fwd, out RaycastHit objectHit, attackDist, IsPlayer ? LayerMask.GetMask("Enemy") : LayerMask.GetMask("PlayerShip"), QueryTriggerInteraction.Ignore)) {
+			Health health = objectHit.transform.GetComponent<Health>();
+			if (health) {
+				health.GetDamage(damage);
+			}
 		}
 	}
 

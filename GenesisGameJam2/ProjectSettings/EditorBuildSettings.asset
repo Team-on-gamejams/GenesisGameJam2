@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/DistanceGrab.unity
+    guid: 24f58b3f0ca02d44eaec7f50bca538f2
+  - enabled: 1
     path: Assets/Scenes/TimScene.unity
     guid: 0937436f70fc442489cc4de0aff71113
   m_configObjects:

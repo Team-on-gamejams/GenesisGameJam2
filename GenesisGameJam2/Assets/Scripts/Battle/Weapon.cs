@@ -41,7 +41,7 @@ public class Weapon : MonoBehaviour
 				cooldownTimer -= Time.deltaTime;
 				cooldownTimer = Mathf.Clamp(cooldownTimer, 0, cooldownTimer);
 			}
-			else if (isHaveOverheat) {
+			if (isHaveOverheat) {
 				overheatTimer -= Time.deltaTime;
 				overheatTimer = Mathf.Clamp(overheatTimer, 0, overheatMaxTime);
 			}
@@ -51,17 +51,21 @@ public class Weapon : MonoBehaviour
 		}
 
 		bool isCanShoot = false;
+		if (isHaveOverheat) {
+			overheatTimer += Time.deltaTime;
+			overheatTimer = Mathf.Clamp(overheatTimer, 0, overheatMaxTime);
+			if (overheatTimer < overheatMaxTime) {
+				isCanShoot = true;
+			}
+		}
+		
 		if (isHaveCooldown) {
 			cooldownTimer -= Time.deltaTime;
 			if (cooldownTimer <= 0) {
 				isCanShoot = true;
 			}
-		}
-		else if (isHaveOverheat) {
-			overheatTimer += Time.deltaTime;
-			overheatTimer = Mathf.Clamp(overheatTimer, 0, overheatMaxTime);
-			if (overheatTimer < overheatMaxTime) {
-				isCanShoot = true;
+			else {
+				isCanShoot = false;
 			}
 		}
 
@@ -103,17 +107,19 @@ public class Weapon : MonoBehaviour
 		cooldownTimer = cooldownTime;
 
 		GameObject beam = Instantiate(beamPrefab, shootPos.transform.position, shootPos.transform.rotation);
+
+		Destroy(beam, 2.0f + UnityEngine.Random.Range(0, 2));
 	}
 
 	void UpdateSlider() {
 		if (!slider)
 			return;
 
-		if (isHaveCooldown) {
-			slider.value = cooldownTimer / cooldownTime;
-		}
-		else if (isHaveOverheat) {
+		if (isHaveOverheat) {
 			slider.value = overheatTimer / overheatMaxTime;
+		}
+		else if (isHaveCooldown) {
+			slider.value = cooldownTimer / cooldownTime;
 		}
 	}
 }

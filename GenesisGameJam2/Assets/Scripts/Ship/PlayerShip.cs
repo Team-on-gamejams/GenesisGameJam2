@@ -59,7 +59,7 @@ public class PlayerShip : MonoBehaviour {
 		health.OnDie += OnDie;
 
 		tempTextField.text = "42F";
-		sectorTextField.text = "Sector:\nMATRIX 177013";
+		sectorTextField.text = "Sector:\n MATRIX-177013";
 
 		shieldKDSlider.minValue = 0;
 		shieldKDSlider.maxValue = shieldKD;

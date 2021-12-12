@@ -122,7 +122,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1263579780511593317}
-  m_Layer: 12
+  m_Layer: 5
   m_Name: HealthSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 1263579780682336893}
   - component: {fileID: 1263579780682336895}
   - component: {fileID: 1263579780682336892}
-  m_Layer: 12
+  m_Layer: 5
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -237,7 +237,7 @@ GameObject:
   - component: {fileID: 1263579781470256343}
   - component: {fileID: 1263579781470256345}
   - component: {fileID: 1263579781470256342}
-  m_Layer: 12
+  m_Layer: 5
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -311,7 +311,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1263579781517272630}
   - component: {fileID: 1263579781517272633}
-  m_Layer: 12
+  m_Layer: 5
   m_Name: HealthSlider1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -400,7 +400,7 @@ GameObject:
   - component: {fileID: 1263579781694642282}
   - component: {fileID: 1263579781694642284}
   - component: {fileID: 1263579781694642285}
-  m_Layer: 12
+  m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -474,7 +474,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1263579781721831636}
   - component: {fileID: 1263579781721831639}
-  m_Layer: 12
+  m_Layer: 5
   m_Name: HealthSlider2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -634,7 +634,7 @@ GameObject:
   - component: {fileID: 8776194793906986529}
   - component: {fileID: 8776194793906986531}
   - component: {fileID: 8776194793906986528}
-  m_Layer: 12
+  m_Layer: 10
   m_Name: AimCone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -693,7 +693,7 @@ GameObject:
   - component: {fileID: 8776194794119286774}
   - component: {fileID: 8776194794119286760}
   - component: {fileID: 8776194794119286761}
-  m_Layer: 12
+  m_Layer: 10
   m_Name: AimCone (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -751,7 +751,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8776194794677909209}
   - component: {fileID: 8776194794677909208}
-  m_Layer: 12
+  m_Layer: 10
   m_Name: GunLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -810,7 +810,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8776194795005880521}
   - component: {fileID: 8776194795005880520}
-  m_Layer: 12
+  m_Layer: 10
   m_Name: Gun2Anchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -846,8 +846,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21254cfe083db90448650a2effb381f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPlayer: 0
   aim: {fileID: 8776194794677909209}
-  targetToAim: {fileID: 0}
+  targetToAim: {fileID: 8776194794677909209}
   targets: []
 --- !u!1 &8776194795081027451
 GameObject:
@@ -859,7 +860,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8776194795081027450}
   - component: {fileID: 8776194795081027453}
-  m_Layer: 12
+  m_Layer: 10
   m_Name: ShootPos
   m_TagString: Untagged
   m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
@@ -1269,7 +1270,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 70bd6e2bc8f81854592c82a86cdb16c1,
         type: 3}
       propertyPath: m_Layer
-      value: 12
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 70bd6e2bc8f81854592c82a86cdb16c1,
         type: 3}
@@ -1279,12 +1280,12 @@ PrefabInstance:
     - target: {fileID: 1986222883544440242, guid: 70bd6e2bc8f81854592c82a86cdb16c1,
         type: 3}
       propertyPath: m_Layer
-      value: 12
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5035638431984748563, guid: 70bd6e2bc8f81854592c82a86cdb16c1,
         type: 3}
       propertyPath: m_Layer
-      value: 12
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 809781442685985921, guid: 70bd6e2bc8f81854592c82a86cdb16c1, type: 3}

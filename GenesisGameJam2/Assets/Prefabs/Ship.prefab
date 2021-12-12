@@ -6556,6 +6556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21254cfe083db90448650a2effb381f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPlayer: 1
   aim: {fileID: 2208699541921845570}
   targetToAim: {fileID: 2208699541877494695}
   targets: []
@@ -9657,6 +9658,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21254cfe083db90448650a2effb381f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPlayer: 1
   aim: {fileID: 2208699541460471849}
   targetToAim: {fileID: 2208699541877494695}
   targets: []

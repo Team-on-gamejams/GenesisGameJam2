@@ -39,7 +39,7 @@ public class Health : MonoBehaviour {
 		}
 	}
 
-	void GetDamage(int damage) {
+	public void GetDamage(int damage) {
 		if (isDead)
 			return;
 

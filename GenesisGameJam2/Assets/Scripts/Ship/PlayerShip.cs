@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using TMPro;
@@ -27,6 +28,12 @@ public class PlayerShip : MonoBehaviour {
 	[SerializeField] TextMeshProUGUI tempTextField;
 	[SerializeField] TextMeshProUGUI sectorTextField;
 	[SerializeField] TextMeshProUGUI debugTextField;
+	[SerializeField] TextMeshProUGUI[] dieTexts;
+
+
+	[Header("UI"), Space]
+	[SerializeField] Slider shieldKDSlider;
+	[SerializeField] Slider doubleWeaponKDSlider;
 
 	[Header("Refs"), Space]
 	[SerializeField] Rigidbody rb;
@@ -36,7 +43,8 @@ public class PlayerShip : MonoBehaviour {
 	[SerializeField] Weapon weaponLight;
 	[SerializeField] Weapon weaponHeavy;
 
-	bool isSwitchingWeapon = true;
+	bool isSwitchingWeapon = false;
+	bool isHoldShooting;
 
 #if UNITY_EDITOR
 	private void OnValidate() {
@@ -49,24 +57,32 @@ public class PlayerShip : MonoBehaviour {
 
 	private void Awake() {
 		health.OnDie += OnDie;
-	}
 
-	private void Start() {
 		tempTextField.text = "42F";
 		sectorTextField.text = "Sector:\nMATRIX 177013";
 
+		shieldKDSlider.minValue = 0;
+		shieldKDSlider.maxValue = shieldKD;
+
+		doubleWeaponKDSlider.minValue = 0;
+		doubleWeaponKDSlider.maxValue = doubleAttackKD;
+
+		shieldKDSlider.value = 0;
+		doubleWeaponKDSlider.value = 0;
+	}
+
+	private void Start() {
 		weaponLight.Equip();
 	}
 
 	private void OnDestroy() {
-
+		health.OnDie -= OnDie;
 	}
 
 	private void Update() {
 		speedTextField.text = "Speed: " + rb.velocity.magnitude.ToString("0") + "m/s";
 		timeTextField.text = DateTime.Now.ToShortTimeString();
 
-		
 		if (OVRInput.GetDown(OVRInput.Button.One)) {
 			SwitchWeapon();
 		}
@@ -78,6 +94,16 @@ public class PlayerShip : MonoBehaviour {
 		}
 		if (OVRInput.GetDown(OVRInput.Button.Four)) {
 			UseDoubleWeaponAbility();
+		}
+
+		Debug.Log($"{OVRInput.Get(OVRInput.RawAxis1D.RIndexTrigger)} {isHoldShooting}");
+		if (OVRInput.Get(OVRInput.RawAxis1D.RIndexTrigger) >= 0.7f && rotateJoy.IsGrabbed && !isHoldShooting) {
+			Debug.Log("Down");
+			PressShoot();
+		}
+		if (OVRInput.Get(OVRInput.RawAxis1D.RIndexTrigger) < 0.7f && isHoldShooting) {
+			Debug.Log("Up");
+			ReleaseShoot();
 		}
 	}
 
@@ -105,16 +131,17 @@ public class PlayerShip : MonoBehaviour {
 			return;
 		}
 
-		Debug.Log("SwitchWeapon");
-
 		if (weaponLight.IsEquiped) {
 			weaponLight.Deequip();
 			weaponHeavy.Equip();
+			if (isHoldShooting) 
+				weaponHeavy.StartShooting();
 		}
-
-		if (weaponHeavy.IsEquiped) {
+		else if (weaponHeavy.IsEquiped) {
 			weaponHeavy.Deequip();
 			weaponLight.Equip();
+			if (isHoldShooting)
+				weaponLight.StartShooting();
 		}
 	}
 
@@ -126,10 +153,16 @@ public class PlayerShip : MonoBehaviour {
 		Debug.Log("UseShieldAbility");
 
 		health.IsShielded = true;
+		shieldKDSlider.value = shieldKD;
 
 		LeanTween.delayedCall(gameObject, shieldTime, () => {
 			health.IsShielded = false;
-			LeanTween.delayedCall(gameObject, shieldKD, () => {
+
+			LeanTween.value(gameObject, shieldKD, 0, shieldKD)
+			.setOnUpdate((float t) => {
+				shieldKDSlider.value = t;
+			})
+			.setOnComplete(() => {
 				isShieldAvaliable = true;
 			});
 		});
@@ -144,13 +177,46 @@ public class PlayerShip : MonoBehaviour {
 
 		weaponLight.Equip();
 		weaponHeavy.Equip();
+		doubleWeaponKDSlider.value = doubleAttackKD;
+
+		if (isHoldShooting) {
+			weaponLight.StartShooting();
+			weaponHeavy.StartShooting();
+		}
 
 		LeanTween.delayedCall(gameObject, doubleAttackTime, () => {
 			weaponHeavy.Deequip();
-			LeanTween.delayedCall(gameObject, doubleAttackKD, () => {
+
+			LeanTween.value(gameObject, doubleAttackKD, 0, doubleAttackKD)
+			.setOnUpdate((float t) => {
+				doubleWeaponKDSlider.value = t;
+			})
+			.setOnComplete(() => {
 				isDoubleAttackAvaliable = true;
 			});
 		});
+	}
+
+	void PressShoot() {
+		isHoldShooting = true;
+
+		Debug.Log($"Start shooting {weaponLight.IsEquiped} {weaponHeavy.IsEquiped}");
+
+		if (weaponLight.IsEquiped)
+			weaponLight.StartShooting();
+		if (weaponHeavy.IsEquiped)
+			weaponHeavy.StartShooting();
+	}
+
+	void ReleaseShoot() {
+		isHoldShooting = false;
+
+		Debug.Log($"End shooting {weaponLight.IsEquiped} {weaponHeavy.IsEquiped}");
+
+		if (weaponLight.IsEquiped)
+			weaponLight.StopShooting();
+		if (weaponHeavy.IsEquiped)
+			weaponHeavy.StopShooting();
 	}
 
 	void OnDie() {
@@ -161,13 +227,18 @@ public class PlayerShip : MonoBehaviour {
 		speedTextField.text = "YOU DEAD";
 		timeTextField.text = "YOU DEAD";
 
+		foreach (var text in dieTexts) {
+			if(text)
+				text.text = "YOU DEAD";
+		}
+
 		//TODO: red flash lights
 		//TODO: flash texts
 		//TODO: slowdown time
 
 		Debug.Log("Game END");
 
-		LeanTween.delayedCall(5.0f, () => {
+		LeanTween.delayedCall(10.0f, () => {
 			Scene scene = SceneManager.GetActiveScene(); 
 			SceneManager.LoadScene(scene.name);
 		});

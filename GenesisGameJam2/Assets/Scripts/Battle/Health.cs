@@ -19,6 +19,9 @@ public class Health : MonoBehaviour {
 	[SerializeField] float threshold = 0.05f;
 	int hpToOneshoot;
 
+	[Header("Get damage clip"), Space]
+	[SerializeField] AudioClip Getdamagesclip;
+
 
 	[Header("UI"), Space]
 	[SerializeField] Transform barParent;

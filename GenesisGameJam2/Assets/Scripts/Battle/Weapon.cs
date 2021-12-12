@@ -27,6 +27,9 @@ public class Weapon : MonoBehaviour {
 	[SerializeField] bool isAnimateBack = false;
 	[SerializeField] Transform gameObjectToAnimate;
 
+	[Header("Audio"), Space]
+	[SerializeField] AudioClip shootClip;
+
 
 	[Header("UI"), Space]
 	[SerializeField] Slider slider;
@@ -150,6 +153,8 @@ public class Weapon : MonoBehaviour {
 				health.GetDamage(damage);
 			}
 		}
+
+		AudioManager.Instance.Play(shootClip, transform.position);
 	}
 
 	void UpdateSlider() {

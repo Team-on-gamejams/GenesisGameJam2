@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestroyOnDie : MonoBehaviour
-{
+public class DestroyOnDie : MonoBehaviour {
+	[Header("Audio"), Space]
+	[SerializeField] AudioClip mainTheme;
+
 	[Header("Refs"), Space]
 	[SerializeField] Health health;
 
@@ -23,6 +25,7 @@ public class DestroyOnDie : MonoBehaviour
 	}
 
 	void OnDie() {
+		AudioManager.Instance.Play(mainTheme, transform.position);
 		Destroy(gameObject);
 	}
 }

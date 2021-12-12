@@ -26,7 +26,7 @@ MonoBehaviour:
     volumeExposedStrings: SoundsVolume
     translatedStringForSettings: MENU_SETTINGS_AUDIO_SOUNDS_SLIDER_HEADER
   is3DGame: 1
-  maxSoundDistance: 20
+  maxSoundDistance: 80
   volumeRolloff:
     serializedVersion: 2
     m_Curve:

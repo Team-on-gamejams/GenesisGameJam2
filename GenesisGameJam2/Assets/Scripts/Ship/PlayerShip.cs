@@ -31,6 +31,9 @@ public class PlayerShip : MonoBehaviour {
 	[SerializeField] TextMeshProUGUI[] dieTexts;
 
 
+	[Header("Audio"), Space]
+	[SerializeField] AudioClip mainTheme;
+
 	[Header("UI"), Space]
 	[SerializeField] Slider shieldKDSlider;
 	[SerializeField] Slider doubleWeaponKDSlider;
@@ -75,6 +78,8 @@ public class PlayerShip : MonoBehaviour {
 
 	private void Start() {
 		weaponLight.Equip();
+
+		AudioManager.Instance.PlayMusic(mainTheme);
 	}
 
 	private void OnDestroy() {

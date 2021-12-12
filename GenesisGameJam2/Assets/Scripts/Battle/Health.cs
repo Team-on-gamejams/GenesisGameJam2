@@ -77,6 +77,8 @@ public class Health : MonoBehaviour {
 			});
 		}
 
+		AudioManager.Instance.Play(Getdamagesclip);
+
 		if (currHealth == 0) {
 			Die();
 		}

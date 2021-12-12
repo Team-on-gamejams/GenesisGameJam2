@@ -84,7 +84,7 @@ MonoBehaviour:
   maxHealth: 500
   isPlayerHealth: 0
   threshold: 0.05
-  Getdamagesclip: {fileID: 8300000, guid: 143e3af1e4a8f8746ab66b701741ce94, type: 3}
+  Getdamagesclip: {fileID: 0}
   barParent: {fileID: 1263579780511593317}
   barFirst: {fileID: 1263579781517272633}
   barSecond: {fileID: 1263579781721831639}
@@ -800,7 +800,7 @@ MonoBehaviour:
   isAnimateRotation: 0
   isAnimateBack: 0
   gameObjectToAnimate: {fileID: 0}
-  shootClip: {fileID: 8300000, guid: be286c124a3ba664aa7b5c4e9bd8ce03, type: 3}
+  shootClip: {fileID: 0}
   slider: {fileID: 0}
   shootPos: {fileID: 8776194795081027450}
 --- !u!1 &8776194795005880534

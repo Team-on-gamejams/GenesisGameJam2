@@ -209,7 +209,9 @@ public class AudioManager : Singleton<AudioManager> {
 	//--------------------------------------------------------------------------------------
 	//2D sound
 	public AudioSource Play(AudioClip clip, Transform emitter, float volume = 1.0f, float pitch = 1.0f, float playDelay = 0.0f, AudioChannel channel = AudioChannel.Sound) {
-		if ((!IsEnabled && channel != AudioChannel.Music) || (GetSinceLastPlayed(clip) > minTimeBetweenSfx))
+		//if ((!IsEnabled && channel != AudioChannel.Music) || (GetSinceLastPlayed(clip) > minTimeBetweenSfx))
+		//	return null;
+		if (!clip)
 			return null;
 		AudioSource source = CreatePlaySource(clip, emitter, volume, pitch, playDelay, channel);
 		Destroy(source.gameObject, clip.length + 1.0f);
@@ -217,7 +219,9 @@ public class AudioManager : Singleton<AudioManager> {
 	}
 
 	public AudioSource Play(AudioClip clip, Vector3 point, float volume = 1.0f, float pitch = 1.0f, float playDelay = 0.0f, AudioChannel channel = AudioChannel.Sound) {
-		if ((!IsEnabled && channel != AudioChannel.Music) || (GetSinceLastPlayed(clip) > minTimeBetweenSfx))
+		//if ((!IsEnabled && channel != AudioChannel.Music) || (GetSinceLastPlayed(clip) > minTimeBetweenSfx))
+		//	return null;
+		if (!clip)
 			return null;
 		AudioSource source = CreatePlaySource(clip, point, volume, pitch, playDelay, channel);
 		Destroy(source.gameObject, clip.length + 1.0f);
@@ -225,7 +229,9 @@ public class AudioManager : Singleton<AudioManager> {
 	}
 
 	public AudioSource Play(AudioClip clip, float volume = 1.0f, float pitch = 1.0f, float playDelay = 0.0f, AudioChannel channel = AudioChannel.Sound) {
-		if ((!IsEnabled && channel != AudioChannel.Music) || (GetSinceLastPlayed(clip) < minTimeBetweenSfx))
+		//if ((!IsEnabled && channel != AudioChannel.Music) || (GetSinceLastPlayed(clip) < minTimeBetweenSfx))
+		//	return null;
+		if (!clip)
 			return null;
 		AudioSource source = CreatePlaySource(clip, Vector3.zero, volume, pitch, playDelay, channel);
 		Destroy(source.gameObject, clip.length + 1.0f);

@@ -3,7 +3,22 @@ guid: bc69ebf7b5f052147b7fca368babd76e
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CharacterFullAlienHorrorStyle_blinn1
+    second: {fileID: 2100000, guid: ced1d84b53d51bc479ba133881c1f153, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: b1997e679b0048f4382fe7c1eb438916, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert2
+    second: {fileID: 2100000, guid: f4a8b379bb55c12468f6e26badd1ca1d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

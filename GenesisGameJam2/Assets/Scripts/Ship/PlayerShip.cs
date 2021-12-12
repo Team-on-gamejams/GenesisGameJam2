@@ -79,7 +79,7 @@ public class PlayerShip : MonoBehaviour {
 	private void Start() {
 		weaponLight.Equip();
 
-		AudioManager.Instance.PlayMusic(mainTheme);
+		AudioManager.Instance.PlayMusic(mainTheme, 0.33f);
 	}
 
 	private void OnDestroy() {

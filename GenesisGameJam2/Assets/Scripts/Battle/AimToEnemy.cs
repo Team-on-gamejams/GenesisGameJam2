@@ -42,8 +42,15 @@ public class AimToEnemy : MonoBehaviour
 
 	public void AddTarget(Collider other) {
 		if(other && other.transform &&
-			((isPlayer && other.gameObject.layer == LayerMask.NameToLayer("Enemy") && other.transform.GetComponent<Health>()) || 
-			(!isPlayer && other.gameObject.layer == LayerMask.NameToLayer("PlayerShip") && other.transform.parent.parent.GetComponent<Health>()))
+			(
+			(!isPlayer && other.gameObject.layer == LayerMask.NameToLayer("PlayerShip") && other.transform.parent.parent.GetComponent<Health>())) &&
+			!targets.Contains(other.transform.parent.parent) &&
+			!other.isTrigger
+		)
+			targets.Add(other.transform.parent.parent);
+
+		if (other && other.transform &&
+			((isPlayer && other.gameObject.layer == LayerMask.NameToLayer("Enemy") && other.transform.GetComponent<Health>()))
 		)
 			targets.Add(other.transform);
 	}

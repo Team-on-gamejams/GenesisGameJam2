@@ -12,8 +12,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: Team-on
-  productName: GameTemplate
+  companyName: ToTheMoon
+  productName: NewMatrix
   defaultCursor: {fileID: 2800000, guid: 44c6f70a5220b324096ad57da72d45cf, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -144,6 +144,9 @@ PlayerSettings:
   - {fileID: 11400000, guid: b4da153d93a196a43993d743823e9a34, type: 2}
   - {fileID: 11400000, guid: 922c9efe0ea91d141a892cebf4220f1e, type: 2}
   - {fileID: 11400000, guid: acb598c77ab4d114498263a60f759183, type: 2}
+  - {fileID: 11400000, guid: 81e5d92debc7b4641862d9fd50c376b4, type: 2}
+  - {fileID: 55122548563656576, guid: e0a05c9e317080547a35ff2cb5ad5b78, type: 2}
+  - {fileID: 11400000, guid: acddf783f1b0bb44bb267b086cf4baaf, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1

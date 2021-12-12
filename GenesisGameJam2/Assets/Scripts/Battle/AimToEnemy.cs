@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class AimToEnemy : MonoBehaviour
 {
+	public bool isPlayer;
 	[Header("Refs"), Space]
 	[SerializeField] Transform aim;
 	[SerializeField] Transform targetToAim;
 
 	public List<Transform> targets;
-	float wanderTimer = 0;
-	Vector3 target;
 
 	private void Update() {
 		while(targets.Count != 0 && targets[0] == null) {
@@ -42,7 +41,10 @@ public class AimToEnemy : MonoBehaviour
 	}
 
 	public void AddTarget(Collider other) {
-		if(other && other.transform && other.transform.GetComponent<Health>())
+		if(other && other.transform &&
+			((isPlayer && other.gameObject.layer == LayerMask.NameToLayer("Enemy") && other.transform.GetComponent<Health>()) || 
+			(!isPlayer && other.gameObject.layer == LayerMask.NameToLayer("PlayerShip") && other.transform.parent.parent.GetComponent<Health>()))
+		)
 			targets.Add(other.transform);
 	}
 

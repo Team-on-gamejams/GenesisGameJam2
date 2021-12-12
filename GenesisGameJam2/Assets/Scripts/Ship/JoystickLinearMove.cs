@@ -37,8 +37,8 @@ public class JoystickLinearMove : MonoBehaviour {
 
 	private void Update() {
 		if (IsGrabbed) {
-			value = Mathf.Clamp(movingPartCenter.InverseTransformVector(movingPartCenter.position - grabbable.grabbedBy.transform.position).z / maxMove, -1, 1);
-			movingPart.localPosition = movingPartCenter.localPosition.SetZ(value * -maxMove);
+			value = Mathf.Clamp(movingPartCenter.InverseTransformVector(movingPartCenter.position - grabbable.grabbedBy.transform.position).z / maxMove, 0, 1);
+			movingPart.localPosition = Vector3.zero.SetZ(value * -maxMove);
 		}
 	}
 

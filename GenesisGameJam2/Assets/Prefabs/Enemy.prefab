@@ -112,6 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad34162967dce6e479e33a4c2d27c53b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weapon: {fileID: 8776194794677909208}
 --- !u!1 &1263579780511593314
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,7 +650,7 @@ Transform:
   m_GameObject: {fileID: 8776194793906986542}
   m_LocalRotation: {x: 0.10088267, y: 0, z: 0, w: -0.9948983}
   m_LocalPosition: {x: 0.265, y: 0, z: 0}
-  m_LocalScale: {x: 30, y: 30, z: 45}
+  m_LocalScale: {x: 20, y: 30, z: 45}
   m_Children: []
   m_Father: {fileID: 8776194795005880521}
   m_RootOrder: 1
@@ -708,7 +709,7 @@ Transform:
   m_GameObject: {fileID: 8776194794119286775}
   m_LocalRotation: {x: 0.10088267, y: 0, z: 0, w: -0.9948983}
   m_LocalPosition: {x: 0.265, y: 0, z: 0}
-  m_LocalScale: {x: 35, y: 35, z: 20}
+  m_LocalScale: {x: 30, y: 30, z: 15}
   m_Children: []
   m_Father: {fileID: 8776194795005880521}
   m_RootOrder: 2
@@ -785,18 +786,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e11963cb0b26d642bdb149af4f77287, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsPlayer: 1
+  IsPlayer: 0
   beamPrefab: {fileID: 6156264409837974684, guid: 7d495eee616759c4396211c3b86c8ba0,
     type: 3}
-  damage: 100
-  attackDist: 90
+  damage: 50
+  attackDist: 50
   isHaveCooldown: 1
-  cooldownTime: 0.25
-  isHaveOverheat: 1
+  cooldownTime: 4
+  isHaveOverheat: 0
   overheatMaxTime: 10
-  isAnimateRotation: 1
+  isAnimateRotation: 0
   isAnimateBack: 0
-  gameObjectToAnimate: {fileID: 4290419016943698086}
+  gameObjectToAnimate: {fileID: 0}
   slider: {fileID: 0}
   shootPos: {fileID: 8776194795081027450}
 --- !u!1 &8776194795005880534
@@ -873,7 +874,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8776194795081027451}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 3.858}
+  m_LocalPosition: {x: 0, y: 0, z: 1.253}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8776194794677909209}
@@ -886,7 +887,7 @@ LineRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8776194795081027451}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1270,6 +1271,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 70bd6e2bc8f81854592c82a86cdb16c1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1986222883544440242, guid: 70bd6e2bc8f81854592c82a86cdb16c1,
         type: 3}
       propertyPath: m_Layer
@@ -1293,12 +1299,6 @@ GameObject:
 --- !u!4 &9097825228934448412 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 70bd6e2bc8f81854592c82a86cdb16c1,
-    type: 3}
-  m_PrefabInstance: {fileID: 8776194793488573175}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &4290419016943698086 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -4449011109054750127, guid: 70bd6e2bc8f81854592c82a86cdb16c1,
     type: 3}
   m_PrefabInstance: {fileID: 8776194793488573175}
   m_PrefabAsset: {fileID: 0}

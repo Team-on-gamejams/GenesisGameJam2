@@ -46,6 +46,8 @@ public class PlayerShip : MonoBehaviour {
 	bool isSwitchingWeapon = false;
 	bool isHoldShooting;
 
+	bool isHoldLeftTrigger;
+
 #if UNITY_EDITOR
 	private void OnValidate() {
 		if (!rb)
@@ -96,7 +98,7 @@ public class PlayerShip : MonoBehaviour {
 			UseDoubleWeaponAbility();
 		}
 
-		if (OVRInput.Get(OVRInput.RawAxis1D.RIndexTrigger) >= 0.7f && rotateJoy.IsGrabbed && !isHoldShooting) {
+		if (OVRInput.Get(OVRInput.RawAxis1D.RIndexTrigger) >= 0.7f && !isHoldShooting) {
 			Debug.Log("Down");
 			PressShoot();
 		}
@@ -104,11 +106,20 @@ public class PlayerShip : MonoBehaviour {
 			Debug.Log("Up");
 			ReleaseShoot();
 		}
+
+		if (OVRInput.Get(OVRInput.RawAxis1D.LIndexTrigger) >= 0.7f && !isHoldLeftTrigger) {
+			isHoldLeftTrigger = true;
+		}
+		if (OVRInput.Get(OVRInput.RawAxis1D.LIndexTrigger) < 0.7f && isHoldLeftTrigger) {
+			isHoldLeftTrigger = false;
+		}
 	}
 
 	private void FixedUpdate() {
 		Vector3 tmp = Vector3.zero;
 		Vector3 targetVelocity = transform.TransformDirection(new Vector3(0, 0, moveJoy.Value * moveSpeed));
+		if (isHoldLeftTrigger)
+			targetVelocity = -targetVelocity;
 		if (targetVelocity != Vector3.zero)
 			rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref tmp, 0.1f);
 

@@ -8,7 +8,7 @@ public class AimToEnemy : MonoBehaviour
 	[SerializeField] Transform aim;
 	[SerializeField] Transform targetToAim;
 
-	List<Transform> targets;
+	public List<Transform> targets;
 	float wanderTimer = 0;
 	Vector3 target;
 
@@ -42,7 +42,7 @@ public class AimToEnemy : MonoBehaviour
 	}
 
 	public void AddTarget(Collider other) {
-		if(other.transform.GetComponent<Health>())
+		if(other && other.transform && other.transform.GetComponent<Health>())
 			targets.Add(other.transform);
 	}
 

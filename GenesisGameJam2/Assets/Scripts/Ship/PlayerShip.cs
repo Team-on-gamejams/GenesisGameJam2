@@ -114,12 +114,7 @@ public class PlayerShip : MonoBehaviour {
 
 		rb.angularVelocity = transform.TransformDirection(new Vector3(rotateJoy.Value.x * rotateSpeed, rotateJoy.Value.y * rotateSpeed, 0));
 
-		if(moveJoy.grabbable.grabbedBy)
-			debugTextField.text = $"{moveJoy.Value}\n{moveJoy.transform.localEulerAngles}\n{moveJoy.grabbable.grabbedBy.transform.parent.parent.localEulerAngles}";
-		else if (rotateJoy.grabbable.grabbedBy)
-			debugTextField.text = $"{rotateJoy.Value}\n{rotateJoy.transform.localEulerAngles}\n{rotateJoy.grabbable.grabbedBy.transform.parent.parent.localEulerAngles}";
-		else
-			debugTextField.text = $"{moveJoy.Value}\n{rotateJoy.Value}\n{rotateJoy.transform.localEulerAngles}";
+		debugTextField.text = $"{GetComponentInChildren<AimToEnemy>().targets.Count}";
 	}
 
 	void SwitchWeapon() {

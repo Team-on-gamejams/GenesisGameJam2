@@ -47576,26 +47576,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnvCube
       objectReference: {fileID: 0}
-    - target: {fileID: 7512687762002292579, guid: 7a27fcc55d579ec448370adeef5c891c,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7512687762002292579, guid: 7a27fcc55d579ec448370adeef5c891c,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7512687762321676745, guid: 7a27fcc55d579ec448370adeef5c891c,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7512687762321676745, guid: 7a27fcc55d579ec448370adeef5c891c,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a27fcc55d579ec448370adeef5c891c, type: 3}
 --- !u!1 &1748461986
